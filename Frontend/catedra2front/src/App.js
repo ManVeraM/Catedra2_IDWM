@@ -8,12 +8,18 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
-import {Modal,TextField} from '@material-ui/core';
+import Modal from '@mui/material/Modal';
+import TextField from '@mui/material/TextField';
 
 
 function App() {
   const [Productos, setProductos] = useState([]);
-  const [NewProduct, setNewProduct] = useState({}); 
+  const [NewProduct, setNewProduct] = useState({
+    nombre: '',
+    precio: '',
+    descripcion: '',
+    image: '',
+  });
   const [Updating, setUpdating] = useState(false);
   const [Adding, setAdding] = useState(true);
 
@@ -45,9 +51,10 @@ function App() {
   }, []); 
 
   const addProduct = (product) => { 
-    axios.post('http://localhost:5218/api/productos', product)
+    axios.post('http://localhost:5218/api/Productos', product)
       .then(res => {
         setProductos([...Productos, res.data]);
+        handleClose();
       })
       .catch(error => {
         console.log(error);
@@ -55,13 +62,13 @@ function App() {
   };
 
 
-  const deleteProduct = (productId) => { 
+  const deleteProduct = (productId) => {
     axios.delete(`http://localhost:5218/api/productos/${productId}`)
       .then(res => {
         setProductos(Productos.filter(product => product.id !== productId));
       })
       .catch(error => {
-        console.log(error);
+        console.log(error); // Agrega un log para mostrar cualquier error en la consola
       });
   };
 
@@ -121,41 +128,62 @@ function App() {
         ))}
       </Grid>
       <Box mt={3} display="flex" justifyContent="center">
-        <Button variant="contained" color="succes">Agregar Producto</Button>
+        <Button variant="contained" color="primary" onClick={handleOpen}>Agregar Producto</Button>
       </Box>
-      <Box mt={3} display="flex" justifyContent="center">
-      <Button variant="contained" color="success" onClick={handleOpen}>Agregar Producto</Button>
-    </Box>
-    <Modal
-      open={open}
-      onClose={handleClose}
-    >
-      <Box sx={{ 
-        position: 'absolute', 
-        top: '50%', 
-        left: '50%', 
-        transform: 'translate(-50%, -50%)', 
-        width: 400, 
-        bgcolor: 'background.paper', 
-        boxShadow: 24, 
-        p: 4 
-      }}>
-        <Grid container direction="column" spacing={2}>
-          <Grid item>
-            <TextField label="Nombre del producto" variant="outlined" fullWidth />
+      <Modal
+        open={open}
+        onClose={handleClose}
+      >
+        <Box sx={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: 400,
+          bgcolor: 'background.paper',
+          boxShadow: 24,
+          p: 4
+        }}>
+          <Grid container direction="column" spacing={2}>
+            <Grid item>
+              <TextField
+                label="Nombre del producto"
+                variant="outlined"
+                fullWidth
+                onChange={(e) => setNewProduct({ ...NewProduct, nombre: e.target.value })}
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                label="Precio del producto"
+                variant="outlined"
+                fullWidth
+                onChange={(e) => setNewProduct({ ...NewProduct, precio: e.target.value })}
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                label="Descripcion del producto"
+                variant="outlined"
+                fullWidth
+                onChange={(e) => setNewProduct({ ...NewProduct, descripcion: e.target.value })}
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                label="Nombre de la imagen"
+                variant="outlined"
+                fullWidth
+                onChange={(e) => setNewProduct({ ...NewProduct, image: e.target.value })}
+              />
+            </Grid>
+            <Grid item>
+              <Button variant="contained" color="primary" onClick={addProduct}>Agregar Producto</Button>
+            </Grid>
           </Grid>
-          <Grid item>
-            <TextField label="Precio del producto" variant="outlined" fullWidth />
-          </Grid>
-          <Grid item>
-            <Button variant="contained" color="success" onClick={addProduct}>Agregar Producto</Button>
-          </Grid>
-        </Grid>
-      </Box>
-    </Modal>
+        </Box>
+      </Modal>
     </div>
-
-    
   );
 }
 
