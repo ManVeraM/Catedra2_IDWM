@@ -45,17 +45,20 @@ function App() {
   };
 
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+    <div>
+      {Productos.map((product, index) => (
+        <Card key={index} style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={product.image} />
+          <Card.Body>
+            <Card.Title>{product.nombre}</Card.Title>
+            <Card.Text>{product.descripcion}</Card.Text>
+            <Card.Text>Precio: ${product.precio}</Card.Text>
+            <Button variant="primary">Ver detalles</Button>
+            <Button variant="danger" onClick={() => deleteProduct(product.id)}>Eliminar</Button>
+          </Card.Body>
+        </Card>
+      ))}
+    </div>
   );
 }
 

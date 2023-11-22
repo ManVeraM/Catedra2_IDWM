@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catedra2Back.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20231122150155_InitialMigration")]
+    [Migration("20231122180922_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -26,6 +26,9 @@ namespace Catedra2Back.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Descripcion")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Image")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nombre")

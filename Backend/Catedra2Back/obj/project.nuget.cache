@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kQSoqOjwWRqDQ5C/RrBdKdFJUYtkdemDaRxw1QNq1OCIqs26y4KyYecJfujtkN6Rv+16uoVdbwfy5w2qensIJg==",
+  "dgSpecHash": "bscqz73c7SaX0S8fqFqoG01o22ul76ckH2e3k9HUrFXL2nIgwuxCN4buI9G/ygUJE/eNKYM1eAUtpiExoRtOHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\Backend\\Catedra2Back\\Catedra2Back.csproj",
+  "projectFilePath": "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\backend\\Catedra2back\\Catedra2Back.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manve\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\manve\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

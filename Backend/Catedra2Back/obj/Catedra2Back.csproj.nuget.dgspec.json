@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\Backend\\Catedra2Back\\Catedra2Back.csproj": {}
+    "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\backend\\Catedra2back\\Catedra2Back.csproj": {}
   },
   "projects": {
-    "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\Backend\\Catedra2Back\\Catedra2Back.csproj": {
+    "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\backend\\Catedra2back\\Catedra2Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\Backend\\Catedra2Back\\Catedra2Back.csproj",
+        "projectUniqueName": "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\backend\\Catedra2back\\Catedra2Back.csproj",
         "projectName": "Catedra2Back",
-        "projectPath": "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\Backend\\Catedra2Back\\Catedra2Back.csproj",
+        "projectPath": "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\backend\\Catedra2back\\Catedra2Back.csproj",
         "packagesPath": "C:\\Users\\manve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\Backend\\Catedra2Back\\obj\\",
+        "outputPath": "C:\\Users\\manve\\Desktop\\Taller2\\Catedra2\\backend\\Catedra2back\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manve\\AppData\\Roaming\\NuGet\\NuGet.Config",

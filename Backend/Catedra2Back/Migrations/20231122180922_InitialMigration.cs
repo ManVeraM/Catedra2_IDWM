@@ -18,7 +18,8 @@ namespace Catedra2Back.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Nombre = table.Column<string>(type: "TEXT", nullable: true),
                     Descripcion = table.Column<string>(type: "TEXT", nullable: true),
-                    Precio = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Precio = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Image = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

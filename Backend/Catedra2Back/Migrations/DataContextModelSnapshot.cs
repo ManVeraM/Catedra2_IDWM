@@ -25,6 +25,9 @@ namespace Catedra2Back.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nombre")
                         .HasColumnType("TEXT");
 
